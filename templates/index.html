@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Has the client subscribed a term deposit  </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <input type="text" name="job" placeholder="Job" required="required" />
+	<input type="text" name="education" placeholder="Education" required="required" />
+	<input type="text" name="default" placeholder="Default" required="required" />
+	<input type="text" name="housing" placeholder="Housing" required="required" />
+	<input type="text" name="loan" placeholder="Loan" required="required" />
+	<input type="text" name="day" placeholder="Day" required="required" />
+	<input type="text" name="month" placeholder="Month" required="required" />
+	<input type="text" name="duration" placeholder="duration" required="required" />
+	<input type="text" name="campaign" placeholder="Campaign" required="required" />
+	<input type="text" name="pdays" placeholder="pdays" required="required" />
+	<input type="text" name="previous" placeholder="previous" required="required" />
+        <input type="text" name="marital_divorced" placeholder="Divorced" required="required" />
+ 	<input type="text" name="marital_married" placeholder="Married" required="required" />
+	<input type="text" name="marital_single" placeholder="Single" required="required" />
+	<input type="text" name="contact_cellular" placeholder="Cellular" required="required" />
+	<input type="text" name="contact_telephone" placeholder="contact_telephone" required="required" />
+	<input type="text" name="contact_unknown" placeholder="contact_unknown" required="required" />
+	<input type="text" name="poutcome_failure" placeholder="poutcome_failure" required="required" />
+	<input type="text" name="poutcome_other" placeholder="contact_unknown" required="required" />
+	<input type="text" name="poutcome_success" placeholder="poutcome_success" required="required" />
+	<input type="text" name="poutcome_unknown" placeholder="poutcome_unknown" required="required" />
+	
+		<input type="text" name="balance" placeholder="balance" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
